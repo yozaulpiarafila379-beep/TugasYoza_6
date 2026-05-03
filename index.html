@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Multiple Inheritance & Class Modifiers</title>
+<title>Konsep Generic & OOP pada Dart</title>
 
 <style>
 *{
@@ -203,9 +203,9 @@ function runDart(id, url) {
 <div class="header" style="padding: 30px; text-align:center;">
     
     <!-- JUDUL UTAMA -->
-    <h1 style="font-size: clamp(2.2em, 6vw, 2.8em); margin: 0; line-height: 1.3; font-weight: bold;">Multiple Inheritance</h1>
+    <h1 style="font-size: clamp(2.2em, 6vw, 2.8em); margin: 0; line-height: 1.3; font-weight: bold;">Konsep Generic</h1>
     <h1 style="font-size: clamp(2.2em, 6vw, 2.8em); margin: 5px 0; line-height: 1.3; font-weight: bold;">&</h1>
-    <h1 style="font-size: clamp(2.2em, 6vw, 2.8em); margin: 0; line-height: 1.3; font-weight: bold;">Class Modifiers</h1>
+    <h1 style="font-size: clamp(2.2em, 6vw, 2.8em); margin: 0; line-height: 1.3; font-weight: bold;">OOP pada Dart</h1>
 
     <!-- GARIS PEMBATAS -->
     <hr style="width: 60%; max-width: 300px; margin: 20px auto; border: none; height: 2px; background-color: #38bdf8;">
@@ -220,106 +220,81 @@ function runDart(id, url) {
 </div>
 
 
-<!-- 8 -->
+<!-- 1 -->
 <div class="section">
-<h2>8.Abstraksi</h2>
+<h2>1.Sealed Class pada Dart</h2>
 <ul>
   <li>
-    Pada program ini, <b>Bentuk</b> digunakan sebagai <i>abstract class</i> 
-    yang memiliki method <b>hitungLuas()</b>.
+    Pada program ini, <b>Result</b> digunakan sebagai <i>sealed class</i> 
+    yang menjadi tipe dasar untuk menyimpan hasil.
   </li>
 
   <li>
-    Class <b>Bentuk</b> tidak dapat dibuat objek secara langsung.
+    Class <b>Result</b> tidak digunakan untuk membuat objek secara langsung, 
+    tetapi sebagai induk dari class lain.
   </li>
 
   <li>
-    Class <b>Persegi</b>, <b>Lingkaran</b>, dan <b>Segitiga</b> merupakan turunan 
-    dari <b>Bentuk</b> yang mengimplementasikan method <b>hitungLuas()</b>.
+    Class <b>Success</b> dan <b>Failure</b> merupakan turunan dari <b>Result</b>.
   </li>
 
   <li>
-    Setiap class turunan menghitung luas dengan cara yang berbeda sesuai bentuknya.
+    Class <b>Success</b> digunakan untuk kondisi berhasil dan memiliki atribut 
+    <b>message</b>.
   </li>
 
   <li>
-    Pada fungsi <b>main()</b>, objek dari masing-masing class dibuat 
-    untuk menghitung luas.
+    Class <b>Failure</b> digunakan untuk kondisi gagal dan memiliki atribut 
+    <b>error</b>.
   </li>
 
   <li>
-    Program kemudian menampilkan hasil perhitungan luas persegi, lingkaran, dan segitiga.
+    Pada fungsi <b>main()</b>, objek dibuat dari class <b>Success</b> 
+    sebagai contoh hasil.
+  </li>
+
+  <li>
+    Program menggunakan pengecekan tipe (<i>if-else</i>) untuk menentukan 
+    apakah hasilnya berhasil atau gagal.
+  </li>
+
+  <li>
+    Program kemudian menampilkan pesan sesuai dengan jenis hasilnya.
   </li>
 </ul>
 <h3>Kode Dart:</h3>
 <div class="code-box">
 <pre><code>
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
-// Kelas : SI2A
+// Nama : Yoza Ulpia Rafila
+// NIM  : 251410004
+// Kelas: (isi sesuai kelas kamu)
 
-// Class Abstrak
-abstract class Bentuk {
-  double hitungLuas();
+sealed class Result {}
+
+class Success extends Result {
+  final String message;
+  Success(this.message);
 }
 
-// Class Persegi
-class Persegi extends Bentuk {
-  double sisi;
-
-  Persegi(this.sisi);
-
-  @override
-  double hitungLuas() {
-    return sisi * sisi;
-  }
+class Failure extends Result {
+  final String error;
+  Failure(this.error);
 }
 
-// Class Lingkaran
-class Lingkaran extends Bentuk {
-  double jariJari;
-
-  Lingkaran(this.jariJari);
-
-  @override
-  double hitungLuas() {
-    return 3.14 * jariJari * jariJari;
-  }
-}
-
-// Class Segitiga
-class Segitiga extends Bentuk {
-  double alas;
-  double tinggi;
-
-  Segitiga(this.alas, this.tinggi);
-
-  @override
-  double hitungLuas() {
-    return 0.5 * alas * tinggi;
-  }
-}
-
-// Program Utama
 void main() {
-  // Objek Persegi
-  Persegi persegi = Persegi(4);
-  print("Luas Persegi: ${persegi.hitungLuas()}");
+  Result result = Success("Berhasil!");
 
-  // Objek Lingkaran
-  Lingkaran lingkaran = Lingkaran(7);
-  print("Luas Lingkaran: ${lingkaran.hitungLuas()}");
-
-    
-  // Objek Segitiga
-  Segitiga segitiga = Segitiga(6, 8);
-  print("Luas Segitiga: ${segitiga.hitungLuas()}");
+  if (result is Success) {
+    print(result.message);
+  } else if (result is Failure) {
+    print(result.error);
+  }
 }
 </code></pre>
 </div>
 <button class="button" 
 onclick="runDart('dart8','https://dartpad.dev/embed-inline.html?id=8b4cd6b544dc7f7de2faae288b649d3b&split=60&run=true')">
-Tampilkan DartPad 8
+Tampilkan DartPad 1
 </button>
 <iframe id="dart8" style="display:none; width:100%; height:300px;"></iframe>
 </div>
