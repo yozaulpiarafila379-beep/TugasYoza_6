@@ -655,7 +655,7 @@ Run Dart 6
 
 <!-- 7 -->
 <div class="section">
-<h2>7.Batasan tipe (extends)  </h2>
+<h2>7.Batasan tipe (extends)</h2>
 <ul>
   <li>
     <b>Generic dengan extends</b> merupakan teknik untuk membatasi tipe data 
@@ -723,4 +723,70 @@ onclick="runDart('dart7','https://dartpad.dev/embed-inline.html?id=381dd7fff6455
 Run Dart 7
 </button>
 <iframe id="dart7" style="display:none; width:100%; height:300px;"></iframe>
+</div>
+
+<!-- 8 -->
+<div class="section">
+<h2>8.Type Inference</h2>
+<ul>
+  <li>
+    <b>Type Inference</b> adalah kemampuan Dart untuk menentukan tipe data 
+    secara otomatis tanpa harus dituliskan secara eksplisit.
+  </li>
+
+  <li>
+    Fungsi <b>myFunc&lt;T&gt;</b> merupakan generic function yang 
+    mengembalikan nilai dengan tipe yang sama.
+  </li>
+
+  <li>
+    Saat fungsi dipanggil tanpa menyebutkan tipe, Dart akan menebak 
+    tipe data berdasarkan nilai yang diberikan.
+  </li>
+
+  <li>
+    Penggunaan kata kunci <b>var</b> memungkinkan tipe data ditentukan 
+    secara otomatis oleh sistem.
+  </li>
+
+  <li>
+    Hal ini membuat penulisan kode menjadi lebih sederhana dan ringkas.
+  </li>
+
+  <li>
+    Meskipun otomatis, Dart tetap menjaga <b>type safety</b> 
+    selama proses kompilasi.
+  </li>
+
+  <li>
+    Konsep ini meningkatkan efisiensi dan kemudahan dalam pengembangan program.
+  </li>
+</ul>
+<h3>Kode Dart:</h3>
+<div class="code-box">
+<pre><code>
+// ==========================================
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+// ==========================================
+
+T myFunc<T>(T value) {
+  return value;
+}
+
+void main() {
+  var intValue = myFunc(10);
+  print("Tipe int: ${intValue.runtimeType}");
+
+  var stringValue = myFunc('test');
+  print("Tipe string: ${stringValue.runtimeType}");
+}
+</code></pre>
+</div>
+<button class="button" 
+onclick="runDart('dart8','https://dartpad.dev/embed-inline.html?id=e4bfd9aada8a918ee1d554a2cfccedc4&split=60&run=true')">
+Run Dart 8
+</button>
+<iframe id="dart8" style="display:none; width:100%; height:300px;"></iframe>
 </div>
