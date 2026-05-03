@@ -219,7 +219,6 @@ function runDart(id, url) {
 
 </div>
 
-
 <!-- 1 -->
 <div class="section">
 <h2>1.Sealed Class</h2>
@@ -289,7 +288,6 @@ Run Dart 1
 </button>
 <iframe id="dart1" style="display:none; width:100%; height:300px;"></iframe>
 </div>
-
 
 <!-- 2 -->
 <div class="section">
@@ -365,3 +363,86 @@ Run Dart 2
 <iframe id="dart2" style="display:none; width:100%; height:300px;"></iframe>
 </div>
 
+<!-- 3 -->
+<div class="section">
+<h2>3.Generic Class & Function</h2>
+<ul>
+  <li>
+    <b>MyClass&lt;T&gt;</b> merupakan <i>generic class</i> yang digunakan untuk 
+    menyimpan data dengan tipe yang fleksibel sesuai kebutuhan.
+  </li>
+
+  <li>
+    Parameter tipe <b>&lt;T&gt;</b> menunjukkan bahwa tipe data akan ditentukan 
+    saat objek dibuat, sehingga class dapat digunakan untuk berbagai jenis data.
+  </li>
+
+  <li>
+    Atribut <b>data</b> berfungsi sebagai tempat penyimpanan nilai sesuai 
+    dengan tipe yang telah ditentukan.
+  </li>
+
+  <li>
+    Method <b>getData()</b> digunakan untuk mengembalikan nilai dari atribut 
+    <b>data</b>.
+  </li>
+
+  <li>
+    <b>myFunc&lt;T&gt;</b> merupakan <i>generic function</i> yang menerima parameter 
+    dengan tipe fleksibel dan mengembalikan nilai dengan tipe yang sama.
+  </li>
+
+  <li>
+    Penggunaan <i>generic</i> pada class dan function mendukung <b>type safety</b>, 
+    sehingga kesalahan tipe data dapat dideteksi saat kompilasi.
+  </li>
+
+  <li>
+    Konsep ini juga meningkatkan efisiensi dan penggunaan ulang kode 
+    dalam pemrograman berorientasi objek.
+  </li>
+</ul>
+<h3>Kode Dart:</h3>
+<div class="code-box">
+<pre><code>
+// ==========================================
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+// ==========================================
+
+class MyClass<T> {
+  T data;
+
+  MyClass(this.data);
+
+  T getData() {
+    return data;
+  }
+}
+
+T myFunc<T>(T value) {
+  return value;
+}
+
+void main() {
+  var myIntClass = MyClass<int>(10);
+  var myStringClass = MyClass<String>('test');
+
+  print(myIntClass.getData());
+  print(myStringClass.getData());
+
+  int intValue = myFunc<int>(100);
+  var stringValue = myFunc<String>('hello');
+
+  print(intValue);
+  print(stringValue);
+}
+</code></pre>
+</div>
+<button class="button" 
+onclick="runDart('dart3','https://dartpad.dev/embed-inline.html?id=5c38c2168d672cdc7e62412e14668e00&split=60&run=true')">
+Run Dart 3
+</button>
+<iframe id="dart3" style="display:none; width:100%; height:300px;"></iframe>
+</div>
