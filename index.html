@@ -225,41 +225,30 @@ function runDart(id, url) {
 <h2>1.Sealed Class</h2>
 <ul>
   <li>
-    Pada program ini, <b>Result</b> digunakan sebagai <i>sealed class</i> 
-    yang menjadi tipe dasar untuk menyimpan hasil.
+    <b>Result</b> merupakan <i>sealed class</i> yang berfungsi sebagai tipe dasar 
+    untuk merepresentasikan suatu hasil dalam pemrograman.
   </li>
 
   <li>
-    Class <b>Result</b> tidak digunakan untuk membuat objek secara langsung, 
-    tetapi sebagai induk dari class lain.
+    <i>Sealed class</i> membatasi pewarisan hanya pada class yang berada dalam 
+    satu file yang sama, sehingga struktur program lebih aman dan terkontrol.
   </li>
 
   <li>
-    Class <b>Success</b> dan <b>Failure</b> merupakan turunan dari <b>Result</b>.
+    <b>Success</b> adalah turunan dari <b>Result</b> yang digunakan untuk 
+    merepresentasikan kondisi berhasil, dengan atribut <b>message</b> 
+    sebagai informasi hasil.
   </li>
 
   <li>
-    Class <b>Success</b> digunakan untuk kondisi berhasil dan memiliki atribut 
-    <b>message</b>.
+    <b>Failure</b> adalah turunan dari <b>Result</b> yang digunakan untuk 
+    merepresentasikan kondisi gagal, dengan atribut <b>error</b> 
+    sebagai informasi kesalahan.
   </li>
 
   <li>
-    Class <b>Failure</b> digunakan untuk kondisi gagal dan memiliki atribut 
-    <b>error</b>.
-  </li>
-
-  <li>
-    Pada fungsi <b>main()</b>, objek dibuat dari class <b>Success</b> 
-    sebagai contoh hasil.
-  </li>
-
-  <li>
-    Program menggunakan pengecekan tipe (<i>if-else</i>) untuk menentukan 
-    apakah hasilnya berhasil atau gagal.
-  </li>
-
-  <li>
-    Program kemudian menampilkan pesan sesuai dengan jenis hasilnya.
+    Konsep ini menerapkan prinsip <b>Object-Oriented Programming (OOP)</b>, 
+    khususnya <i>inheritance</i> dan <i>polymorphism</i>, dalam pengelolaan hasil.
   </li>
 </ul>
 <h3>Kode Dart:</h3>
