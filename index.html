@@ -294,38 +294,25 @@ Run Dart 1
 <h2>2.Generic Class Box</h2>
 <ul>
   <li>
-    <b>Box&lt;T&gt;</b> merupakan <i>generic class</i> dalam bahasa Dart yang digunakan 
-    untuk menyimpan data dengan tipe yang dapat ditentukan secara fleksibel.
+    <b>Box&lt;T&gt;</b> merupakan <i>generic class</i> yang digunakan untuk 
+    menyimpan data dengan tipe fleksibel.
   </li>
 
   <li>
-    Penggunaan <i>generic</i> memungkinkan satu class digunakan untuk berbagai 
-    tipe data tanpa perlu membuat class baru untuk setiap jenis data.
+    Parameter <b>&lt;T&gt;</b> memungkinkan class digunakan untuk berbagai 
+    jenis data tanpa perlu membuat class baru.
   </li>
 
   <li>
-    Tipe parameter <b>&lt;T&gt;</b> berfungsi sebagai penanda bahwa tipe data 
-    akan ditentukan saat objek dibuat.
+    Atribut <b>data</b> menyimpan nilai sesuai tipe yang ditentukan.
   </li>
 
   <li>
-    Atribut <b>data</b> digunakan untuk menyimpan nilai sesuai dengan tipe 
-    yang telah ditentukan.
+    Method <b>show()</b> digunakan untuk menampilkan isi data.
   </li>
 
   <li>
-    Method <b>show()</b> berfungsi untuk menampilkan isi dari atribut 
-    <b>data</b>.
-  </li>
-
-  <li>
-    Konsep ini mendukung prinsip <b>type safety</b>, sehingga kesalahan tipe data 
-    dapat dideteksi pada saat proses kompilasi.
-  </li>
-
-  <li>
-    Penggunaan generic juga meningkatkan efisiensi dan keterbacaan kode 
-    dalam pemrograman berorientasi objek.
+    Konsep ini menekankan <b>type safety</b> dan penggunaan ulang kode.
   </li>
 </ul>
 <h3>Kode Dart:</h3>
@@ -452,38 +439,27 @@ Run Dart 3
 <h2>4.Class Box</h2>
 <ul>
   <li>
-    <b>Box&lt;T&gt;</b> merupakan <i>generic class</i> dalam bahasa Dart yang 
-    digunakan untuk menyimpan data dengan tipe yang fleksibel sesuai kebutuhan.
+    <b>Box&lt;T&gt;</b> merupakan pengembangan dari generic class 
+    dengan penerapan <i>encapsulation</i>.
   </li>
 
   <li>
-    Parameter tipe <b>&lt;T&gt;</b> menunjukkan bahwa tipe data akan ditentukan 
-    saat objek dibuat, sehingga class dapat digunakan untuk berbagai jenis data.
+    Atribut <b>_value</b> bersifat <i>private</i> untuk melindungi data 
+    dari akses langsung.
   </li>
 
   <li>
-    Atribut <b>_value</b> bersifat <i>private</i> dan bertipe <i>nullable</i>, 
-    yang berfungsi untuk menyimpan nilai sesuai tipe yang telah ditentukan.
+    Penggunaan tipe <i>nullable</i> memungkinkan nilai dapat bernilai kosong.
   </li>
 
   <li>
-    <i>Getter</i> <b>value</b> digunakan untuk mengakses nilai dari atribut 
-    <b>_value</b> tanpa mengubahnya secara langsung.
+    <i>Getter</i> digunakan untuk mengambil nilai secara aman, 
+    sedangkan <i>setter</i> digunakan untuk mengubah nilai.
   </li>
 
   <li>
-    Method <b>setValue()</b> digunakan untuk mengubah nilai yang tersimpan 
-    di dalam <b>_value</b>.
-  </li>
-
-  <li>
-    Penggunaan <i>generic</i> pada class ini mendukung <b>type safety</b>, 
-    sehingga kesalahan tipe data dapat dideteksi saat proses kompilasi.
-  </li>
-
-  <li>
-    Konsep ini juga meningkatkan fleksibilitas, efisiensi, dan penggunaan ulang 
-    kode dalam pemrograman berorientasi objek.
+    Konsep ini menggabungkan <b>generic</b> dan <b>encapsulation</b> 
+    dalam OOP untuk meningkatkan keamanan dan kontrol data.
   </li>
 </ul>
 <h3>Kode Dart:</h3>
