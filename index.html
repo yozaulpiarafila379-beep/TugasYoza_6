@@ -289,3 +289,79 @@ Run Dart 1
 </button>
 <iframe id="dart1" style="display:none; width:100%; height:300px;"></iframe>
 </div>
+
+
+<!-- 2 -->
+<div class="section">
+<h2>2.Generic Class Box</h2>
+<ul>
+  <li>
+    <b>Box&lt;T&gt;</b> merupakan <i>generic class</i> dalam bahasa Dart yang digunakan 
+    untuk menyimpan data dengan tipe yang dapat ditentukan secara fleksibel.
+  </li>
+
+  <li>
+    Penggunaan <i>generic</i> memungkinkan satu class digunakan untuk berbagai 
+    tipe data tanpa perlu membuat class baru untuk setiap jenis data.
+  </li>
+
+  <li>
+    Tipe parameter <b>&lt;T&gt;</b> berfungsi sebagai penanda bahwa tipe data 
+    akan ditentukan saat objek dibuat.
+  </li>
+
+  <li>
+    Atribut <b>data</b> digunakan untuk menyimpan nilai sesuai dengan tipe 
+    yang telah ditentukan.
+  </li>
+
+  <li>
+    Method <b>show()</b> berfungsi untuk menampilkan isi dari atribut 
+    <b>data</b>.
+  </li>
+
+  <li>
+    Konsep ini mendukung prinsip <b>type safety</b>, sehingga kesalahan tipe data 
+    dapat dideteksi pada saat proses kompilasi.
+  </li>
+
+  <li>
+    Penggunaan generic juga meningkatkan efisiensi dan keterbacaan kode 
+    dalam pemrograman berorientasi objek.
+  </li>
+</ul>
+<h3>Kode Dart:</h3>
+<div class="code-box">
+<pre><code>
+// ==========================================
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+// ==========================================
+
+class Box<T> {
+  T data;
+
+  Box(this.data);
+
+  void show() {
+    print("Isi Box: $data");
+  }
+}
+
+void main() {
+  var intBox = Box<int>(100);
+  var stringBox = Box<String>("Halo Dart");
+
+  intBox.show();
+  stringBox.show();
+}
+</code></pre>
+</div>
+<button class="button" 
+onclick="runDart('dart2','https://dartpad.dev/embed-inline.html?id=744ee60f87d36a1ead1b461db794e3e6&split=60&run=true')">
+Run Dart 2
+</button>
+<iframe id="dart2" style="display:none; width:100%; height:300px;"></iframe>
+</div>
+
