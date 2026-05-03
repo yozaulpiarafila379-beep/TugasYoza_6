@@ -446,3 +446,88 @@ Run Dart 3
 </button>
 <iframe id="dart3" style="display:none; width:100%; height:300px;"></iframe>
 </div>
+
+<!-- 4 -->
+<div class="section">
+<h2>4.Generic Class & Function</h2>
+<ul>
+  <li>
+    <b>Box&lt;T&gt;</b> merupakan <i>generic class</i> dalam bahasa Dart yang 
+    digunakan untuk menyimpan data dengan tipe yang fleksibel sesuai kebutuhan.
+  </li>
+
+  <li>
+    Parameter tipe <b>&lt;T&gt;</b> menunjukkan bahwa tipe data akan ditentukan 
+    saat objek dibuat, sehingga class dapat digunakan untuk berbagai jenis data.
+  </li>
+
+  <li>
+    Atribut <b>_value</b> bersifat <i>private</i> dan bertipe <i>nullable</i>, 
+    yang berfungsi untuk menyimpan nilai sesuai tipe yang telah ditentukan.
+  </li>
+
+  <li>
+    <i>Getter</i> <b>value</b> digunakan untuk mengakses nilai dari atribut 
+    <b>_value</b> tanpa mengubahnya secara langsung.
+  </li>
+
+  <li>
+    Method <b>setValue()</b> digunakan untuk mengubah nilai yang tersimpan 
+    di dalam <b>_value</b>.
+  </li>
+
+  <li>
+    Penggunaan <i>generic</i> pada class ini mendukung <b>type safety</b>, 
+    sehingga kesalahan tipe data dapat dideteksi saat proses kompilasi.
+  </li>
+
+  <li>
+    Konsep ini juga meningkatkan fleksibilitas, efisiensi, dan penggunaan ulang 
+    kode dalam pemrograman berorientasi objek.
+  </li>
+</ul>
+<h3>Kode Dart:</h3>
+<div class="code-box">
+<pre><code>
+// ==========================================
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI2A
+// ==========================================
+
+class Box<T> {
+  T? _value;
+
+  Box(this._value);
+
+  T? get value => _value;
+
+  void setValue(T value) {
+    _value = value;
+  }
+}
+
+void main() {
+  var intBox = Box<int>(10);
+  print('Int Box Value: ${intBox.value}');
+
+  intBox.setValue(20);
+  print('Int Box After Set: ${intBox.value}');
+
+  var stringBox = Box<String>('Hello, Generic!');
+  print('String Box Value: ${stringBox.value}');
+
+  stringBox.setValue('Hello World');
+  print('String Box After Set: ${stringBox.value}');
+
+  var doubleBox = Box<double>(3.14);
+  print('Double Box Value: ${doubleBox.value}');
+}
+</code></pre>
+</div>
+<button class="button" 
+onclick="runDart('dart4','https://dartpad.dev/embed-inline.html?id=5f587240ac4e881c4c8f547e1bfcb1b2&split=60&run=true')">
+Run Dart 4
+</button>
+<iframe id="dart4" style="display:none; width:100%; height:300px;"></iframe>
+</div>
